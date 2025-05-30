@@ -27,10 +27,10 @@ During our research on how international students look for work in the U.S. post
 As a study in UI/UX design, this repository also contains documentation for our development process.
 
 Please refer to the [UI/UX Study](/UIUXStudy) folder for:
-- [Background Research & Needfinding](/UXSUItudy/BackgroundResearch&Needfinding.md) (including interviews)
-- [Figma Prototype](/UXSUItudy/FigmaPrototype.md)
-- [User Stories & Tasks](/UXSUItudyUserStories&Tasks.md)
-- [Usability Testing](/UXSUItudy/UsabilityTesting)
+- [Background Research & Needfinding](/UIUXStudy/BackgroundResearch&Needfinding.md) (including interviews)
+- [Figma Prototype](/UIUXStudy/FigmaPrototype.md)
+- [User Stories & Tasks](/UIUXStudy/UserStories&Tasks.md)
+- [Usability Testing](/UIUXStudy/UsabilityTesting)
 
 ## How to Build
 1) Download the source code files in the folder Project Implementation
