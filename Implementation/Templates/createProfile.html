@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block title %}Sign Up{% endblock %}
+{% block content %}
+<script src="{{url_for('static', filename = 'js/EditProfile.js')}}"></script>
+<h1 class="headerText">Enter LinkedIn Login Info</h1>
+<form id="LinkedIn" action="/credentialsLogIn">
+    <label for="user"><span class="emphasisGenericText">LinkedIn Username</span> &nbsp; &nbsp; &nbsp; </label><label for="pass"><span class="emphasisGenericText">LinkedIn Password</span></label><br>
+    <input type="text" id="user" name="user" required></input>
+    <input type="text" id="pass" name="pass" required></input>
+    <br>
+    <input type="submit" name="LinkdIn" id="LinkdIn">
+</form>
+
+<br>
+<hr class="navSeparatorLine">
+
+<h1 class="headerText">Or Enter Info Manually</h1>
+<form id="userInfo" method="post">
+
+    <!-- Login Credentials-->
+    <h2 class="subHeaderText"> Login Credentials </h2>
+    <label for="email"> <span class="emphasisGenericText">Email Address</span> </label> <br>
+    <input type="text" id="email" name="email" value="{{email}}" required><br>
+
+    <label for="phone"> <span class="emphasisGenericText">Phone Number</span> </label> <br>
+    <input type="text" id="phone" name="phone" value="{{phone}}" required><br>
+
+    <label for="password"> <span class="emphasisGenericText">Password</span> </label> <br>
+    <input type="text" id="password" name="password" value="{{password}}" required><br>
+
+    <!-- Bio Information -->
+    <h2 class="subHeaderText"> Bio </h2>
+
+    <label for="name"><span class="emphasisGenericText">First Name</span></label><br>
+    <input type="text" id="fName" name="fName" value="{{fName}}" required><br>
+    
+    <label for="name"><span class="emphasisGenericText">Last Name</span></label><br>
+    <input type="text" id="lName" name="lName" value="{{lName}}" required><br>
+
+    <label for="bDate"><span class="emphasisGenericText">Date of Birth</span></label><br>
+    <input type="date" id="bDate" name="bDate" value="{{bDate}}" required><br>
+
+    <!-- School Information -->
+    <h2 class="subHeaderText"> Education </h2>
+
+    <label for="school"><span class="emphasisGenericText">School</span></label><br>
+    <input type="text" id="school" name="school" value="{{school}}" required><br>
+
+    <label for="major"><span class="emphasisGenericText">Major</span></label><br>
+    <input type="text" id="major" name="major" value="{{major}}" required><br>
+
+    <label for="gradYear"><span class="emphasisGenericText">Graduation Year</span></label><br>
+    <input type="number" min="1990" max="2050" value="{{gradYear}}" id="gradYear" name="gradYear" required><br>
+
+    <br>
+    <input type="submit" name="Manually" id="Manually" value="Submit">
+</form>
+{% endblock %}

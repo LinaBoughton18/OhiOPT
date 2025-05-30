@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block title %}OPT Information{% endblock %}
+{% block content %}   
+<script src="{{url_for('static', filename = 'js/timeline.js')}}"></script>
+
+<!-- GRACE: General information about OPT -->
+<!-- h1 -> headerText, h2 -> subHeaderText, bodyText-->
+<h1 class = "headerText">What is OPT?</h1>
+<p class ="bodyText">OPT (Optional Practical Training) is a temporary employment for international students with an F-1 visa to stay and work in the U.S. after they graduate. Essentially, OPT lets students get a job related to their area of study without reapplying for student visa.</p>
+<a class="linkText" href="https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/optional-practical-training-opt-for-f-1-students">Click here to visit the official website for OPT</a>
+
+<h1 class = "headerText">How do I get OPT status?</h1>
+  <p class ="bodyText">Fill out the information below to view your own OPT status & deadlines.</p>
+    <!-- LINA: Date-entry field -->
+    <div>
+      <label class="genericText" for="gradDate">Graduation Date:</label>
+      <input type="date" id="gradDateField" name="gradDate" value="2025-05-01" min="2000-01-01 "max="2050-12-31"/> <br>
+
+      <!-- LINA: STEM/NOTSTEM radio buttons -->
+      <p class="bodyText" style="display:inline;">Are you a STEM major? </p> <br>
+        <!-- GRACE: STEM info tooltip and list of majors -->
+        <button class="STEMButton tooltip " style="display:inline;">
+          Why is this important?
+          <span class="tooltiptext">If you are a STEM major, you can apply for an extention that gives you an extra 24-months of authorization.</span><br><br>
+        </button>
+      <!-- back to Lina's radio buttons -->
+      <form>
+      <input type="radio" id="stem" name="StemNotStem" value="STEM">
+      <label class="genericText" for="stem">STEM <a class="linkText" href="https://www.ice.gov/sites/default/files/documents/Document/2016/stem-list.pdf">(Which majors are considered STEM?)</a></label><br>
+
+      <input type="radio" id="notStem" name="StemNotStem" value="Not STEM">
+      <label class="genericText" for="notStem">Not STEM</label><br>
+      </form>
+      <input type="button" onclick="generateTimeline()" value="Create Timeline!">
+    </div>
+
+    <p></p>
+
+    <!-- LINA UPDATED TIMELINE -->
+    <div class="timelineBox">
+      <h1 class="headerText"> <span id="startTime"> 90 days before graduation</span> </h1>
+      <p class ="bodyText"> You can start applying for OPT status.</p>
+      <p class ="bodyText">There's two main steps to applying for OPT:</p>
+      <ol class="orderedListText">
+        <li>Have your designated school official (DSO) reccomend you for OPT</li>
+        <li>File Form I-765 (Application for Employment Authorization)</li>
+      </ol>
+      <p class ="bodyText">Once you have OPT status, you are authorized to work in the U.S. at companies that support OPT for a certain length of time (usually 12 months).</p>
+    </div>
+    <div class="timelineLine"></div>
+    <div class="timelineBox">
+      <h1 class = "headerText"> <span id="gradTime"> Your graduation day!</span></h1>
+      <p class ="bodyText"> Your graduation day! </p>
+    </div>
+    <div class="timelineLine"></div>
+    <div class="timelineBox">
+      <h1 class = "headerText"> <span id="endTime">60 days after graduation</span> </h1>
+      <p class ="bodyText"> You must apply for OPT status by this time (within 60 days post-graduation).</p>
+    </div>
+
+    <p></p>
+{% endblock %}

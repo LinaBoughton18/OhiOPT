@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block title %}Log In{% endblock %}
+{% block content %}
+
+<script src="{{url_for('static', filename = 'js/EditProfile.js')}}"></script>
+
+<script>
+    function togglePasswordVisibility() {
+        var x = document.getElementById("myPassword");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+        console.log("Toggled!");
+    }
+</script>
+
+<form id="LogIn" method="post" action="/credentialsLogIn">
+    <br>
+    <label for="email"> <span class="emphasisGenericText">Email Address</span> </label>
+    <br>
+    <input type="text" id="email" name="email" required></input>
+    <br>
+    <br>
+    <label for="password"> <span class="emphasisGenericText">Password</span> </label>
+    <br>
+    <input type="password" id="myPassword" name="password" required></input>
+    <br>
+    <!-- An element to toggle between password visibility -->
+    <label class="checkbox-label">
+        <input type="checkbox" class="styled-checkbox" onclick="togglePasswordVisibility()" id="showPasswordCheckbox">
+        <span class="box"></span>
+        <span class="genericText" style="font-size: 13px;">Show Password</span>
+    </label>
+    <br>
+    <br>
+    <input type="submit" name="LogIn" id="LogIn">
+</form>
+{% endblock %}

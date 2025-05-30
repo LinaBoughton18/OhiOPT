@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <script src="{{url_for('static', filename = 'js/layout.js')}}"></script>
+        <!-- This should render the layout stuff before the page loads :)-->
+        <script>
+            window.addEventListener('DOMContentLoaded', function() {
+                startPage();
+            });
+        </script>
+        <title>OhiOPT Home</title>
+        <span id="LoginCheck" value="{{loggedIn}}"></span>
+    </head>
+    <body>
+    <!-- Log In/Sign Up Buttons -->
+    <!-- 
+        hi! small change here, essentially  buttons can be
+        removed but not added (well they can be added but its harder)
+        so this section now contains all possible buttons which could be here
+        (as of writing this its LogIn LogOut CreateAccount)
+        This page also now has access to layout.js's functions which deal with
+        properly removing things when they need to be.
+        do note, just running the normal startup in layout.js causes
+        breaking so there is a section for things which apply to "not the home page"
+    -->
+    <div class="homePageProfileButtonPositioning">
+        <!-- Log In Button -->
+        <!-- note there is a way to fix the the dragline but its more trouble than its worth imo-->
+        <a id="logIn" href="/logIn"> 
+            <button class="pageBarButton">
+                Log In
+            </button>
+        </a>
+        <a id="logOut" href="/logOut"> <!-- note: logout redirector doesnt exist yet-->
+            <button class="pageBarButton">
+                Log Out
+            </button>
+        </a>
+        <!-- Create Profile Button -->
+        <a id="createProfile" href="/createProfile"> 
+            <button class="pageBarButton">
+                Sign Up
+            </button>
+        </a>
+    </div>
+        <a href="/"><img class="homeLogo" src="{{ url_for('static', filename='Logos&Such/OhioOPT(Title+Subtitle+Logo).png') }}"></a>
+        <div class="buttonCenterLine">
+            <a href="/timeline"> 
+                <button class="homeButton tooltip">
+                    Learn About OPT
+                    <p class="tooltiptext"> Learn about OPT status & see your OPT deadlines!</p>
+                </button>
+            </a>
+            <a href="/jobBoard"> 
+                <button class="homeButton tooltip">
+                    Find OPT Jobs
+                    <p class="tooltiptext">Find & apply to Ohio jobs that sponsor OPT status!</p>
+                </button>
+            </a>
+        </div>
+    </body>
+</html>
+
+<!-- LINA NOTES (NO TOUCHY!)
+    Create account button goes to create account page (copy stuff from edit page)
+        Grab stuff in app.py "if request.method == "POST" .......... return redirect url_for "userProfile"
+-->

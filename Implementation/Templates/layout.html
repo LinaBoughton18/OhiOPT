@@ -1,0 +1,94 @@
+<!doctype html>
+
+<!-- 
+    Howdy! someone (I think Lina) mentioned they wanted
+    the ability to have multiple buttons which remove themselves
+    depending on what page youre on and if youre logged in
+    because the css is good, we can just literally call
+    "element.remove()" on the element and the remaining buttons
+    will snap into place (yippee).
+    Theres a placeholder function in the layout.js file
+    Feel free to add whatever other specifics you want for when buttons
+    should be removed. :thumbs_up_emoji:
+ -->
+
+<html>
+    <head>
+        <!-- LINA: These blocks allow us to input content in the individual html pages, I think -->
+        {% block head %}
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <script src="{{url_for('static', filename = 'js/layout.js')}}"></script>
+        <!-- This should render the layout stuff before the page loads :)-->
+        <script>
+            window.addEventListener('DOMContentLoaded', function() {
+                startPage();
+            });
+        </script>
+        {% endblock %}
+    </head>
+    <!-- The navigation bar on the side------------------------------------------------- -->
+    <!-- Holds the logged in var-->
+    <span id="LoginCheck" value="{{loggedIn}}"></span>
+    <div class="sidebar" id="sidebar">
+        <a class="notButton" href="/"><img class="sidebarLogo" src="{{ url_for('static', filename='Logos&Such/OhioOPT(Title+Logo).png') }}"></a>
+        <a id="navbarTimeline" href="/timeline" class="{% if currentPage == 'timeline' %}active{% endif %}">OPT Information</a>
+        <a id="navbarJobBoard" href="/jobBoard" class="{% if currentPage == 'jobBoard' %}active{% endif %}">Job Board</a>
+        <hr class="navSeparatorLine">
+        {% if loggedIn %}
+        <a class="visLoggedIn {% if currentPage == 'userProfile' %}active{% endif %}" id="navbarUserProfile" href="/userProfile">User Profile</a>
+        <a class="visLoggedIn {% if currentPage == 'savedJobs' %}active{% endif %}" id="navbarSavedJobs" href="/savedJobs">Saved Jobs</a>
+        {% endif %}
+    </div>
+    <body>
+        <div class="content">
+            <!-- The bar along the top of the screen------------------------------------------------- -->
+        	<div class="pagebar">
+                <h1 class="title">{% block title %}{% endblock %}</h1>
+                <!-- The buttons that go in the top right of the screen -->
+                <div class="pageSpecificButtonPositioning">
+                    <!-- Log In/Sign Up Buttons -->
+                        <!-- Log In Button -->
+                        <a id="logIn" href="/logIn"> 
+                            <button class="pageBarButton">
+                                Log In
+                            </button>
+                        </a>
+                        <a id="logOut" href="/logOut"> <!-- note: logout redirector doesnt exist yet-->
+                            <button class="pageBarButton">
+                                Log Out
+                            </button>
+                        </a>
+                        <!-- Create Profile Button -->
+                        <a id="createProfile" href="/createProfile"> 
+                            <button class="pageBarButton">
+                                Sign Up
+                            </button>
+                        </a>
+                </div>
+            </div>
+<!-- The page's content goes here!-->
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>
+
+<div class="homePageProfileButtonPositioning">
+    <!-- Log In Button -->
+    <!-- note there is a way to fix the the dragline but its more trouble than its worth imo-->
+    <a id="logIn" href="/logIn"> 
+        <button class="pageBarButton">
+            Log In
+        </button>
+    </a>
+    <a id="logOut" href="/logOut"> <!-- note: logout redirector doesnt exist yet-->
+        <button class="pageBarButton">
+            Log Out
+        </button>
+    </a>
+    <!-- Create Profile Button -->
+    <a id="createProfile" href="/createProfile"> 
+        <button class="pageBarButton">
+            Sign Up
+        </button>
+    </a>
+</div>

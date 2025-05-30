@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}User Profile{% endblock %}
+{% block content %}
+
+    <!-- Edit Profile Button -->
+    <br>
+    <a id="editProfile" href="/editProfile"> 
+        <button class="pageBarButton" style="background-color: var(--OPTGreen); margin-left: 0px;">
+            Edit Profile
+        </button>
+    </a>
+
+    <h1 class="headerText">{{fName}} {{lName}} </h1>
+    <hr class="navSeparatorLine">
+
+    <h2 class="subHeaderText"> Bio </h2>
+    <p class="bodyText"> <b>Birthdate:</b> {{asMDY}}</p>
+    <p class="bodyText"> <b>School:</b> {{school}}</p>
+    <p class="bodyText"> <b>Major:</b> {{major}}</p>
+    <p class="bodyText"> <b>Graduated:</b> {{gradYear}}</p>
+
+    <hr class="navSeparatorLine">
+
+    <h2 class="subHeaderText"> Contact </h2>
+    <p class="bodyText"> <b>Email:</b> {{email}}</p>
+    <p class="bodyText"> <b>Phone Number:</b> {{phone}}</p>
+
+{% endblock %}

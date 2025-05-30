@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block title %}Job Board{% endblock %}
+{% block content %}
+<div class="jobsBarStopScroll">
+    <span id="jobsVarHolder" value="{{jobs}}"></span>
+    <br>
+
+    <!--<a class="notButton" href="/"><img class="sidebarLogo" src="{{ url_for('static', filename='Logos&Such/OhioOPT(Title+Logo).png') }}"></a> -->
+
+    <div id="jobs" class="sidebar">
+      <!-- Filters (they don't work, but they are there!) -->
+      <a class="notButton">
+      <h2 class="subHeaderText">Filter:</h2>
+      <form id="jobFilters" method="POST" action="javascript:sort()">
+        <label for="inField" class="emphasisGenericText">Field:</label>
+        <select name="inField" id="fieldDropdown">
+          <option value="{{currentField}}">{{currentField}}</option>
+          {% for item in jobs %}
+            <option value='{{item["field"]}}'>{{item["field"]}}</option>
+          {% endfor %}
+        </select><br>
+
+        <label for="inLocation" class="emphasisGenericText">Location:</label>
+        <select name="inLocation" id="locationDropdown">
+          <option value="None">None</option>
+          {% for item in jobs %}
+            <option value='{{item["location"]}}'>{{item["location"]}}</option>
+          {% endfor %}
+        </select><br>
+
+        <label for="inPay" class="emphasisGenericText">Pay:</label>
+        <select name="inPay" id="payDropdown">
+          <option value="None">None</option>
+          {% for item in jobs %}
+            <option value='{{item["pay"]}}'>${{item["pay"]}}/hour</option>
+          {% endfor %}
+        </select><br>
+        <br>
+
+        <input type="submit" name="Filter" id="filterJobs">
+      </form>
+      </a>
+      <hr class="navSeparatorLine">
+
+      <!-- Pull jobs from our job list on the backend -->
+      {% for item in jobs %}
+        <a href="#" onclick="showJobContent(`{{item}}`)" name="jobItem">{{item["jobTitle"]}}</a>
+      {% endfor %}
+    </div>
+    <div class="jobContent" id="contentByJob">
+    </div>
+    <script src="{{url_for('static', filename='js/JobBoard.js')}}"></script>
+  </div>
+    {% endblock %}

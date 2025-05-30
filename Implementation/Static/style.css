@@ -1,0 +1,408 @@
+/* Stylization ----------------------------------------------------------*/
+/* Fonts */
+/* Headers & Titles: Soleway */ @import url('https://fonts.googleapis.com/css2?family=Solway&display=swap');
+/* Body text: Atkinson Hyberlegible */ @import url('https://fonts.google.com/specimen/Atkinson+Hyperlegible');
+/* Color Palette */
+:root {
+  --OPTGreen: #5f8755;
+  --OPTDarkGreen:#214318;
+  --OPTLightGreen: #ebf4e9;
+  --OPTBrown: #684947;
+  --OPTLightBrown: #f0ecea;
+  --OPTExtraDarkBrown: #421c19;
+}
+/* Useful deotations for stuff in case we want to quickly change it later */
+:root {
+  /* Header + Body Colors */
+  --headerTextColor: var(--OPTGreen);
+  --bodyTextColor: black;
+
+  --headerTextFont: 'Solway', serif;
+  --bodyTextFont: 'Atkinson Hyperlegible', sans-serif;
+}
+
+/* general use ----------------------------------------------------------------------------*/
+p.bodyText {
+  font-family: var(--bodyTextFont);
+  color: var(--bodyTextColor);
+  font-size: 16px;
+}
+
+ol.orderedListText {
+  font-family: var(--bodyTextFont);
+  color: var(--bodyTextColor);
+  font-size: 16px;
+}
+
+.genericText {
+  font-family: var(--bodyTextFont);
+  color: var(--bodyTextColor);
+  font-size: 16px;
+}
+
+.emphasisGenericText {
+  font-family: var(--headerTextFont);
+  color: var(--headerTextColor);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.linkText {
+  font-family: var(--bodyTextFont);
+  color: var(--OPTGreen);
+  font-size: 16px;
+}
+
+h1.headerText {
+  font-family: var(--headerTextFont);
+  color: var(--headerTextColor);
+  font-weight: bold;
+  font-size: 2em;
+}
+
+h2.subHeaderText {
+  font-family: var(--headerTextFont);
+  color: var(--OPTBrown);
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.buttonCenterLine{ /* puts a div full of buttons in a line centered */
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* make login only elements invisible unless logged in */
+.visLoggedIn{
+  visibility: hidden;
+}
+
+.jobsBarStopScroll{
+  height:100%;
+  overflow-y: hidden;
+}
+
+/* tooltips --------------------------------------------------------- */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 300px;
+  border: 2px solid var(--OPTGreen);
+  background-color: var(--OPTLightGreen);
+  color: var(--OPTGreen);
+  text-align: center;
+  border-radius: 6px;
+  padding: 6px 6px;
+  /* Positioning */
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  margin-left: -85px;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* home page specials ------------------------------------------------*/
+.homeLogo {
+  display: block;
+  justify-content: center;
+  margin-left: auto;
+  margin-right:auto;
+  max-width: 100%;
+  margin-top: 150px;
+  height: auto;
+  align-items: center;
+  padding: 30px;
+}
+
+h1.homeTitle {
+  font-family: var(--headerTextFont);
+  text-align: center;
+  font-size: 75px;
+  padding-top: 5%;
+  margin-bottom: 5px;
+  color: var(--headerTextColor);
+}
+h2.homeSubtitle {
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 7%;
+}
+
+/* home buttons */
+.homeButton {
+  /* border: 5px solid var(--OPTExtraDarkBrown); */
+  color: white;
+  background-color: var(--OPTBrown);
+  padding: 0px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 24px;
+  font-family: var(--headerTextFont);
+  font-weight: bold;
+  height: 80px;
+  width: 200px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  align-items: center;
+  border-radius: 6px;
+  border: 0px;
+}
+
+.homeButton:hover { /* the home button when the mouse hovers over them */
+  background-color: var(--OPTExtraDarkBrown);
+  color: white;
+}
+
+.homePageProfileButtonPositioning { /* positions the login/signup buttons around a line for the Home Page! */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display:flex;
+  justify-content: space-between;
+  align-items: right;
+  padding: 10px 10px;
+}
+
+/* sidebar/navbar stuff! --------------------------------------------------------*/
+.sidebar {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 200px;
+  background-color: var(--OPTLightGreen);
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+/* Sidebar links*/
+.sidebar a {
+  display: block;
+  color: var(--headerTextColor);
+  padding: 16px;
+  text-decoration: none;
+  font-family: var(--headerTextFont);
+  font-size: 20px;
+  font-weight: bold;
+  transition-duration: 0.4s;
+}
+/* Active/current link */
+.sidebar a.active {
+  background-color: #d4e7d1;
+  color: #4d7443;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.notButton) {
+  background-color: var(--OPTGreen);
+  color: white;
+}
+
+hr.navSeparatorLine { /* The small bar that separates logged-in nav from loggedout nav features */
+  height: 4px;
+  background-color: var(--OPTGreen);
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+/* IF YOU CHANGE THE MARGINS OF THE SIDEBAR, CHANGE THEM HERE TOO */
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+div.jobContent {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+.sidebarLogo {
+  height: 100%;
+  width: 100%;
+}
+
+#nav_bar .active {
+  color:            #F8F8F8;
+  background-color: #4f81bd;
+}
+
+/*TIMELINE STYLE--------------------------------------------------*/
+
+.timelineBox {
+  border: 5px solid var(--OPTGreen);
+  background-color: var(--OPTLightGreen);
+  border-radius: 6px;
+  padding: 6px 10px;
+  text-align: left;
+  width: 700px;
+}
+
+.timelineLine { /*Little line that goes between boxes */
+  border-left:13px solid var(--OPTGreen);
+  height: 30px;
+  margin-left: 30px;
+}
+
+/* STEM BUTTONS & SUCH ------------------------------------------*/
+.STEMButton {
+  font-family: var(--bodyTextFont);
+  color: var(--OPTGreen);
+  background-color: white;
+  border: 0px;
+  font-size: 10px;
+}
+
+/* STEM mini-tooltip */
+.STEMButton.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.STEMButton.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  height: auto;
+  background-color: var(--OPTLightGreen);
+  color: var(--OPTGreen);
+  text-align: center;
+  border: 2px solid var(--OPTGreen);
+  border-radius: 6px;
+  padding: 6px 6px;
+  font-size: 14px;
+  /* Positioning */
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+}
+.STEMButton:hover .tooltiptext {
+  visibility: visible;
+}
+
+/*-------------PAGE BAR ------------------------------------------------------------------------/*
+
+/* Horizontal Bar that goes along the top of most pages */
+/* Includes the page title & page-specific buttons like login, signup, edit profile (on user profile), or save edits (on edit profile) */
+.pagebar {
+  background-color: var(--OPTLightBrown);
+  color: var(--OPTBrown);
+  padding: 12px 16px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  font-family: var(--headerTextFont);
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.pageBarButton { /* class for the buttons in the pageBar */
+	color: white;
+  background-color: var(--OPTBrown);
+  padding: 6px 6px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 11.5px;
+  margin-left: .5rem;
+  margin-right: .5rem;
+  font-family: var(--headerTextFont);
+  font-weight: bold;
+  height: 35px;
+  width: 80px;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 6px;
+  transition-duration: 0.4s;
+  border: 0px;
+}
+.pageBarButton:hover { /* What the page buttons look like when mouse hovered over */
+  background-color: var(--OPTExtraDarkBrown);
+  color: white;
+}
+
+.pageSpecificButtonPositioning { /* positions buttons around a line to the right */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display:flex;
+  justify-content: space-between;
+  align-items: right;
+  padding: 10px 10px;
+  background-color: inherit;
+}
+
+/* Styling form buttons */
+input[type=button]:hover,
+input[type=submit]:hover,
+input[type=reset]:hover {
+  background-color: var(--OPTDarkGreen);
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: var(--OPTGreen);
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 6px 12px;
+  text-decoration: none;
+  margin: 1px 0px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  font-family: var(--headerTextFont);
+}
+/* Styles for checkbox ------------------------------------------*/
+input[type="checkbox"].styled-checkbox { /* Hides the default checkbox */
+  display: none;
+}
+
+/* Custom checkbox */
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.checkbox-label span.box {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ccc;
+  display: inline-block;
+  margin-right: 6px;
+  border-radius: 3px;
+  background-color: white;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+input[type="checkbox"].styled-checkbox:checked + span.box {
+  background-color: var(--OPTGreen);
+  border-color: var(--OPTDarkGreen);
+}
