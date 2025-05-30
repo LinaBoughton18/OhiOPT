@@ -15,10 +15,9 @@ Students can view the jobs available to them on a job board similar to Handshake
 #### Job Information
 Each job posting will contain a job title, description, and company name.
 **Priority: 1**
-- Task: 
-  - Build container that will store job information
-    - Possible fields: job title, description, company name
-    - Estimate: 2
+- Task: Build container that will store job information
+  - Possible fields: job title, description, company name
+  - Estimate: 2
 
 #### “OPT Helper Timeline”
 Students are able to see important VISA-related dates in a timeline (such as when their student Visa expires). The timeline will include reminders such as “45 days left”, to remind the user to apply for OPT status.

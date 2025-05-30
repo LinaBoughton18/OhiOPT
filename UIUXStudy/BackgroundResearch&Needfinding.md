@@ -2,9 +2,10 @@
 
 ## Finding the Root Issue
 
-User Goal: International students need to find an OPT job in the U.S.
+#### User Goal:
+International students need to find an OPT job in the U.S.
 
-Problems/Barriers to this goal:
+#### Problems/Barriers to this goal:
 - People have a lot of trouble finding job opportunities in the first place.
 - People don’t seem to know what kind of companies sponsor OPT jobs. Some think that big companies will hire you easily, others think that smaller companies are easier.
 - Many companies do not give feedback to applicants (you have no idea if your resume is getting past screenings)
@@ -13,7 +14,7 @@ Problems/Barriers to this goal:
   - confused on the subject, asking "How do I search for these companies?", "What am I supposed to do?", & "How do I know which jobs offer OPT?"
   - desperate (to stay in the US)
 
-Current solutions to these problems:
+#### Current solutions to these problems:
 - Using Handshake or LinkedIn
 - Some people try starting their own nonprofit businesses (LLCs) to stay in the US longer
 - Staying in academic longer by applying to grad school
@@ -23,11 +24,12 @@ Current solutions to these problems:
 - Find state government work
 - Networking
 
-Root Issue: people don't necessarily want an OPT job, they want to stay in the US post-graduation (Unfortunately some of that is a bit beyond the scope of this project)
+#### Root Issue
+People don't necessarily want an OPT job, they want to stay in the US post-graduation (Unfortunately some of that is a bit beyond the scope of this project)
 
 ## Domain Research
 
-Current Applications
+#### Current Applications
 - OPT Nation
   - Allows students to search for OPT jobs (right from their front page!)
     - Hard to find stuff in Ohio
@@ -44,12 +46,12 @@ Current Applications
     - It is a very popular job finding site, so we should borrow its design conventions as we see fit
   - Requires a log-in
 
-What's "good" about current approaches?
+#### What's "good" about current approaches?
 - The example sites above have search bars right up front so you can jump in to looking for jobs by location, keywords, etc.
 - Offering students OPT-specific information
 - Trying to make information less reading-centric & more visual
 
-What about the current approaches could use improvement?
+#### What about the current approaches could use improvement?
 - The example websites are very cluttered and overwhelming, buttons everywhere, distracting animations & images, lots of long paragraphs & reading
   - Choice overload!
 - Very few jobs in Ohio (not exactly the websites fault, but regardless)
@@ -79,25 +81,25 @@ What about the current approaches could use improvement?
 
 #### Common Themes Accross Interviews
 
-Goals
+**Goals**
 - Higher paying job & better career prospects
 - Local job opportunities (college or Ohio-based)
 - Forming/maintaining networks (local folks, Wooster alum, family, S.O.s, etc.)
 
-Setbacks
+**Setbacks**
 - Lack/clarity of information
  - Information sources (college events/workshops, family, alumni)
 - Focusing on quantity of jobs over quality
 - Getting ghosted by employers
 
-Actions
+**Actions**
 - Online resources: Handshake, LinkedIn, Indeed, & Glassdoor
 - Determine if a job is “OPT-friendly” (using filters for OPT jobs, position/company research, etc.)
 - Build their network
 - Build their portfolio
 - Saves jobs to lists to apply/review later
 
-Needs
+**Needs**
 - People want well-paying jobs, and the US is a good place for those jobs
 - For international students in the US, OPT is the best way to fulfill that goal (especially for STEM majors)
 - Information on OPT is hard to find
